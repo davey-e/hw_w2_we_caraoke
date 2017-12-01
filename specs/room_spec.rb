@@ -70,4 +70,29 @@ class TestRoom < MiniTest::Test
     assert_equal(expected, actual)
   end
 
+  def test_remove_guest_from_room__number_of_guests_decreased
+    @room1.add_guest_to_room(@guest3)
+    @room1.add_guest_to_room(@guest4)
+    @room1.remove_guest_from_room(@guest3)
+    expected = 3
+    actual = @room1.count_guests_in_room()
+    assert_equal(expected, actual)
+  end
+
+  def test_remove_guest_from_room__guest_no_longer_in_room
+    @room1.add_guest_to_room(@guest3)
+    @room1.add_guest_to_room(@guest4)
+    @room1.remove_guest_from_room(@guest3)
+    expected = false
+    actual = @room1.is_guest_in_room?(@guest3)
+    assert_equal(expected, actual)
+  end
+
+  def test_remove_guest_from_room__guest_wasnt_in_room
+    @room1.remove_guest_from_room(@guest3)
+    expected = 2
+    actual = @room1.count_guests_in_room()
+    assert_equal(expected, actual)
+  end
+
 end
