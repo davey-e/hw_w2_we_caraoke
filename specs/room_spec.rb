@@ -17,6 +17,7 @@ class TestRoom < MiniTest::Test
     @guest4 = Guest.new("Joe", "Plevin")
     @room1 = Room.new("Prince", [@song1, @song2], [@guest1, @guest2])
     @room2 = Room.new("Bono", [@song3, @song4], [@guest3, @guest4])
+    @room3 = Room.new("Madonna")
 
   end
 
@@ -35,6 +36,18 @@ class TestRoom < MiniTest::Test
   def test_room_has_guests
     expected = [@guest1, @guest2]
     actual = @room1.guests
+    assert_equal(expected, actual)
+  end
+
+  def test_room_has_no_songs
+    expected = []
+    actual = @room3.songs
+    assert_equal(expected, actual)
+  end
+
+  def test_room_has_no_guests
+    expected = []
+    actual = @room3.guests
     assert_equal(expected, actual)
   end
 
