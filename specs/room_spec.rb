@@ -38,4 +38,36 @@ class TestRoom < MiniTest::Test
     assert_equal(expected, actual)
   end
 
+  def test_count_number_of_guests_in_room
+    #expected = n
+    #actual = call function to return number of guests in room (guests array)
+    #assert_equal(expected, actual)
+  end
+
+  def test_is_guest_in_room__true
+    #expected = true
+    #actual = call function to return whether a guest is in a room
+    #assert_equal(expected, actual)
+  end
+
+  def test_is_guest_in_room__false
+    #expected = true
+    #actual = call function to return whether a guest is in a room
+    #assert_equal(expected, actual)
+  end
+
+  def test_add_guest_to_room__number_of_guests_increased
+    #call function to add a guest to a room
+    #expected = n
+    #actual = call function to return number of guests in room (guests array)
+    #assert_equal(expected, actual)
+  end
+
+  def test_add_guest_to_room__guest_name_exists
+    #call function to add a guest to a room
+    #expected = true
+    #actual = call function to return whether a guest is in a room
+    #assert_equal(expected, actual)
+  end
+
 end
