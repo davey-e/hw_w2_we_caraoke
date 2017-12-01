@@ -9,11 +9,15 @@ class Room
   end
 
   def count_guests_in_room()
-    return guests.length()
+    return @guests.length()
   end
 
   def is_guest_in_room?(guest)
-    return guests.include?(guest)
+    return @guests.include?(guest)
+  end
+
+  def add_guest_to_room(guest)
+    @guests.push(guest)
   end
 
 end
