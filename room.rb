@@ -12,4 +12,8 @@ class Room
     return guests.length()
   end
 
+  def is_guest_in_room?(guest)
+    return guests.include?(guest)
+  end
+
 end
