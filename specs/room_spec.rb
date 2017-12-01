@@ -63,11 +63,11 @@ class TestRoom < MiniTest::Test
     assert_equal(expected, actual)
   end
 
-  def test_add_guest_to_room__guest_name_exists
-    #call function to add a guest to a room
-    #expected = true
-    #actual = call function to return whether a guest is in a room
-    #assert_equal(expected, actual)
+  def test_add_guest_to_room__guest_is_in_room
+    @room1.add_guest_to_room(@guest3)
+    expected = true
+    actual = @room1.is_guest_in_room?(@guest3)
+    assert_equal(expected, actual)
   end
 
 end
