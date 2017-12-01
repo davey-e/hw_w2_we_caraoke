@@ -8,4 +8,8 @@ class Room
     @guests = guests
   end
 
+  def count_guests_in_room()
+    return guests.length()
+  end
+
 end

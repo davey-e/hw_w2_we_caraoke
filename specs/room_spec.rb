@@ -39,9 +39,9 @@ class TestRoom < MiniTest::Test
   end
 
   def test_count_number_of_guests_in_room
-    #expected = n
-    #actual = call function to return number of guests in room (guests array)
-    #assert_equal(expected, actual)
+    expected = 2
+    actual = @room1.count_guests_in_room()
+    assert_equal(expected, actual)
   end
 
   def test_is_guest_in_room__true
