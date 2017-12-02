@@ -11,11 +11,14 @@ class TestRoom < MiniTest::Test
     @song2 = Song.new("Thriller", "Michael Jackson")
     @song3 = Song.new("Bohemian Rhapsody", "Queen")
     @song4 = Song.new("Happy", "Pharrell Williams")
+    @song5 = Song.new("Learn To Fly", "Foo Fighters")
+    @song6 = Song.new("Wonderwall", "Oasis")
     @fav_song1 = Song.new("Learn To Fly", "Foo Fighters")
     @fav_song2 = Song.new("Wonderwall", "Oasis")
+    @fav_song3 = Song.new("Champagne Supernova", "Oasis")
     @guest1 = Guest.new("Dave", "Ellis", 50, @fav_song1)
     @guest2 = Guest.new("Manny", "Chita", 100, @fav_song2)
-    @guest3 = Guest.new("Ross", "Hill", 50, @fav_song1)
+    @guest3 = Guest.new("Ross", "Hill", 50, @fav_song3)
     @guest4 = Guest.new("Joe", "Plevin", 50, @fav_song2)
     @guest5 = Guest.new("Max", "Robson", 50, @fav_song1)
     @room1 = Room.new("Prince", [@song1, @song2], [@guest1, @guest2],4)
@@ -196,5 +199,26 @@ class TestRoom < MiniTest::Test
     actual = @room1.count_guests_in_room()
     assert_equal(expected, actual)
   end
+
+  def test_is_guest_fav_song_in_room_playlist__true
+    @room1.add_song_to_room(@song5)
+    expected = true
+    actual = @room1.is_guest_fav_song_in_room_playlist?(@guest1)
+    assert_equal(expected, actual)
+  end
+
+  def test_is_guest_fav_song_in_room_playlist__false
+    @room1.add_song_to_room(@song6)
+    expected = false
+    actual = @room1.is_guest_fav_song_in_room_playlist?(@guest3)
+    assert_equal(expected, actual)
+  end
+
+  # def test_guest_cheers_if_fav_song_in_room_playlist
+  #   @room1.add_song_to_room(@song5)
+  #   expected = "Woohoo!"
+  #   actual = @room1.add_guest_to_room(@guest1)
+  #   assert_equal(expected, actual)
+  # end
 
 end

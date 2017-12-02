@@ -46,4 +46,11 @@ class Room
     return @songs.delete(song)
   end
 
+  def is_guest_fav_song_in_room_playlist?(guest)
+    for song in @songs
+      return true if song.title == guest.favourite_song.title && song.artist == guest.favourite_song.artist
+    end
+    return false
+  end
+
 end
