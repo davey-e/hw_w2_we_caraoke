@@ -40,6 +40,12 @@ class TestRoom < MiniTest::Test
     assert_equal(expected, actual)
   end
 
+  def test_room_has_max_guests_value
+    expected = 4
+    actual = @room1.max_guests
+    assert_equal(expected, actual)
+  end
+
   def test_room_has_no_songs
     expected = []
     actual = @room3.songs
