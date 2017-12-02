@@ -25,4 +25,8 @@ class Room
     return @guests.delete(guest)
   end
 
+  def count_songs_in_room()
+    return @songs.length()
+  end
+
 end
