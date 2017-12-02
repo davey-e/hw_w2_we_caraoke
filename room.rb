@@ -29,4 +29,8 @@ class Room
     return @songs.length()
   end
 
+  def is_song_in_room?(song)
+    return @songs.include?(song)
+  end
+
 end

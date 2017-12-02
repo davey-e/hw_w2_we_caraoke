@@ -114,4 +114,16 @@ class TestRoom < MiniTest::Test
     assert_equal(expected, actual)
   end
 
+  def test_is_song_in_room__true
+    expected = true
+    actual = @room1.is_song_in_room?(@song1)
+    assert_equal(expected, actual)
+  end
+
+  def test_is_song_in_room__false
+    expected = false
+    actual = @room1.is_song_in_room?(@song4)
+    assert_equal(expected, actual)
+  end
+
 end
