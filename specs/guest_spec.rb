@@ -36,4 +36,10 @@ class TestGuest < MiniTest::Test
     assert_equal(expected, actual)
   end
 
+  def test_guest_can_cheer
+    expected = "Woohoo!"
+    actual = @guest1.cheer()
+    assert_equal(expected, actual)
+  end
+
 end

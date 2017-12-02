@@ -9,4 +9,8 @@ class Guest
     @favourite_song = favourite_song
   end
 
+  def cheer()
+    return "Woohoo!"
+  end
+
 end
