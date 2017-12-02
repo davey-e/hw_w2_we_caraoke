@@ -17,7 +17,8 @@ class Room
   end
 
   def add_guest_to_room(guest)
-    @guests.push(guest)
+    return if is_guest_in_room?(guest)
+    return @guests.push(guest)
   end
 
   def remove_guest_from_room(guest)
