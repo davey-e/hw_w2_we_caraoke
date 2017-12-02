@@ -140,4 +140,13 @@ class TestRoom < MiniTest::Test
     assert_equal(expected, actual)
   end
 
+  def test_remove_song_from_room__number_of_songs_decreased
+    @room1.add_song_to_room(@song3)
+    @room1.add_song_to_room(@song4)
+    @room1.remove_song_from_room(@song3)
+    expected = 3
+    actual = @room1.count_songs_in_room()
+    assert_equal(expected, actual)
+  end
+
 end

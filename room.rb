@@ -37,4 +37,9 @@ class Room
     @songs.push(song)
   end
 
+  def remove_song_from_room(song)
+    return if !is_song_in_room?(song)
+    return @songs.delete(song)
+  end
+
 end
