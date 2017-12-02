@@ -15,8 +15,9 @@ class TestRoom < MiniTest::Test
     @guest2 = Guest.new("Manny", "Chita")
     @guest3 = Guest.new("Ross", "Hill")
     @guest4 = Guest.new("Joe", "Plevin")
-    @room1 = Room.new("Prince", [@song1, @song2], [@guest1, @guest2])
-    @room2 = Room.new("Bono", [@song3, @song4], [@guest3, @guest4])
+    @guest5 = Guest.new("Max", "Robson")
+    @room1 = Room.new("Prince", [@song1, @song2], [@guest1, @guest2],4)
+    @room2 = Room.new("Bono", [@song3, @song4], [@guest3, @guest4],6)
     @room3 = Room.new("Madonna")
 
   end
@@ -176,6 +177,15 @@ class TestRoom < MiniTest::Test
     @room1.remove_song_from_room(@song3)
     expected = 2
     actual = @room1.count_songs_in_room()
+    assert_equal(expected, actual)
+  end
+
+  def test_add_guest_doesnt_exceed_room_max_guests
+    @room1.add_guest_to_room(@guest3)
+    @room1.add_guest_to_room(@guest4)
+    @room1.add_guest_to_room(@guest5)
+    expected = 4
+    actual = @room1.count_guests_in_room()
     assert_equal(expected, actual)
   end
 
