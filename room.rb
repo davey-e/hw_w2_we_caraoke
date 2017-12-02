@@ -20,7 +20,9 @@ class Room
   def add_guest_to_room(guest)
     return if count_guests_in_room + 1 > max_guests
     return if is_guest_in_room?(guest)
-    return @guests.push(guest)
+    @guests.push(guest)
+    return "Woohoo!" if is_guest_fav_song_in_room_playlist?(guest)
+
   end
 
   def remove_guest_from_room(guest)

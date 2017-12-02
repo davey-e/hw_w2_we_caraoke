@@ -214,11 +214,11 @@ class TestRoom < MiniTest::Test
     assert_equal(expected, actual)
   end
 
-  # def test_guest_cheers_if_fav_song_in_room_playlist
-  #   @room1.add_song_to_room(@song5)
-  #   expected = "Woohoo!"
-  #   actual = @room1.add_guest_to_room(@guest1)
-  #   assert_equal(expected, actual)
-  # end
+  def test_guest_cheers_if_fav_song_in_room_playlist
+    @room1.add_song_to_room(@song6)
+    expected = "Woohoo!"
+    actual = @room1.add_guest_to_room(@guest4)
+    assert_equal(expected, actual)
+  end
 
 end
