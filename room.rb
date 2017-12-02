@@ -35,7 +35,8 @@ class Room
   end
 
   def add_song_to_room(song)
-    @songs.push(song)
+    return if is_song_in_room?(song)
+    return @songs.push(song)
   end
 
   def remove_song_from_room(song)

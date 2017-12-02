@@ -140,10 +140,17 @@ class TestRoom < MiniTest::Test
     assert_equal(expected, actual)
   end
 
-  def test_add_song_to_room__song_is_in_room
+  def test_add_song_to_room__song_is_now_in_the_room
     @room1.add_song_to_room(@song3)
     expected = true
     actual = @room1.is_song_in_room?(@song3)
+    assert_equal(expected, actual)
+  end
+
+  def test_add_song_to_room__song_was_already_in_the_room
+    @room1.add_song_to_room(@song1)
+    expected = 2
+    actual = @room1.count_songs_in_room()
     assert_equal(expected, actual)
   end
 
