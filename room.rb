@@ -33,4 +33,8 @@ class Room
     return @songs.include?(song)
   end
 
+  def add_song_to_room(song)
+    @songs.push(song)
+  end
+
 end
