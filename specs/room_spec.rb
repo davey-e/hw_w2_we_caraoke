@@ -57,6 +57,12 @@ class TestRoom < MiniTest::Test
     assert_equal(expected, actual)
   end
 
+  def test_room_has_till_value
+    expected = 0
+    actual = @room1.till
+    assert_equal(expected, actual)
+  end
+
   def test_room_has_no_songs
     expected = []
     actual = @room3.songs
