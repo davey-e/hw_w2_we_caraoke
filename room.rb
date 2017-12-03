@@ -1,3 +1,5 @@
+require("pry")
+
 class Room
 
   attr_reader :name, :songs, :guests, :max_guests, :entry_fee, :till
@@ -23,6 +25,8 @@ class Room
     return if count_guests_in_room + 1 > max_guests
     return if is_guest_in_room?(guest)
     @guests.push(guest)
+    receive_entry_fee()
+    guest.pay_entry_fee(self)
     return "Woohoo!" if is_guest_fav_song_in_room_playlist?(guest)
 
   end
