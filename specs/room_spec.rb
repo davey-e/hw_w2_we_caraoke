@@ -21,8 +21,8 @@ class TestRoom < MiniTest::Test
     @guest3 = Guest.new("Ross", "Hill", 50, @fav_song3)
     @guest4 = Guest.new("Joe", "Plevin", 50, @fav_song2)
     @guest5 = Guest.new("Max", "Robson", 50, @fav_song1)
-    @room1 = Room.new("Prince", [@song1, @song2], [@guest1, @guest2],4)
-    @room2 = Room.new("Bono", [@song3, @song4], [@guest3, @guest4],6)
+    @room1 = Room.new("Prince", [@song1, @song2], [@guest1, @guest2],4,10)
+    @room2 = Room.new("Bono", [@song3, @song4], [@guest3, @guest4],6,10)
     @room3 = Room.new("Madonna")
 
   end
@@ -48,6 +48,12 @@ class TestRoom < MiniTest::Test
   def test_room_has_max_guests_value
     expected = 4
     actual = @room1.max_guests
+    assert_equal(expected, actual)
+  end
+
+  def test_room_has_entry_fee_value
+    expected = 10
+    actual = @room1.entry_fee
     assert_equal(expected, actual)
   end
 
