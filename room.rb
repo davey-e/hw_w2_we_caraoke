@@ -57,4 +57,8 @@ class Room
     return false
   end
 
+  def receive_entry_fee()
+    @till += @entry_fee
+  end
+
 end
