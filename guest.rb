@@ -13,4 +13,7 @@ class Guest
     return "Woohoo!"
   end
 
+  def pay_entry_fee(room)
+    @wallet -= room.entry_fee
+  end
 end
