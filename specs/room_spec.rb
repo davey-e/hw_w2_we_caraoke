@@ -241,13 +241,13 @@ class TestRoom < MiniTest::Test
   end
 
   def test_entry_fee_transaction_when_guest_added_to_room
-    @room1.add_guest_to_room(@guest1)
+    @room1.add_guest_to_room(@guest3)
     room_till_expected = 10
     room_till_actual = @room1.till
     guest_wallet_expected = 40
-    guest_wallet_actual = @guest1.wallet
+    guest_wallet_actual = @guest3.wallet
     assert_equal(room_till_expected, room_till_actual)
     assert_equal(guest_wallet_expected, guest_wallet_actual)
   end
-  
+
 end
